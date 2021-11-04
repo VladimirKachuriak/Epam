@@ -13,6 +13,5 @@ public class Main {
             num/=2;
         }
         System.out.println(result);
-        System.out.println(result);
     }
 }
