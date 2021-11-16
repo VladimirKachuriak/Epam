@@ -1,0 +1,12 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(µ‚ Òùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‚˜á®şÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(¨®óûÿÿÿÿ
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(›ñµŠıÿÿÿÿ
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(ñúäòıÿÿÿÿ
+<	java:S1315""Add a default case to this switch.(°çÖÈşÿÿÿÿ
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(ŸÊ›âşÿÿÿÿ
+f
+java:S13015"KReplace this "switch" statement by "if" statements to increase readability.(°çÖÈşÿÿÿÿ
+v
+java:S1488-"[Immediately return this expression instead of assigning it to the temporary variable "arr".(¤È„“ûÿÿÿÿ
