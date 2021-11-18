@@ -1,0 +1,9 @@
+
+C
+java:S1125&"(Remove the unnecessary boolean literals.(‘Êöüÿÿÿÿ
+S
+java:S1854*"8Remove this useless assignment to local variable "temp".(€…»ıÿÿÿÿ
+D
+java:S1481*")Remove this unused "temp" local variable.(€…»ıÿÿÿÿ
+~
+java:S4165,"cRemove this useless assignment; "sideB" already holds the assigned value along all execution paths.(ìã¶úÿÿÿÿ
