@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main(String[] args) {
         AccountController accountController = new AccountController(new AccountModel(), new AccountView());
-        accountController.enterInAccount();
+        accountController.enterInAccount();//login=user;password=user
         accountController.showStatistic();
         Model model = new Model();
         View view = new View();

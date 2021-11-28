@@ -31,7 +31,7 @@ public class Controller {
                 model.setMax(inputMaxValueWithScanner(sc));
                 view.printMessage(View.OUR_INT + model.getMax());
             }
-            model.Generate();
+            model.generateRand();
 
             model.setStatistic(model.getStatistic() + View.INPUT_MIN_DATA + model.getMin() + " " + View.INPUT_MAX_DATA + model.getMax() + "\n");
         } else {

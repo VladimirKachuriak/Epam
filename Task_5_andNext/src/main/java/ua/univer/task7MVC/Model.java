@@ -15,7 +15,7 @@ public class Model {
         return statistic;
     }
 
-    public void Generate() {
+    public void generateRand() {
         rand_num = (int) (Math.random() * (max - min)) + min;
     }
 
