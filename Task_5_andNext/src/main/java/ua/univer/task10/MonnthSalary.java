@@ -2,15 +2,15 @@ package ua.univer.task10;
 
 import java.math.BigDecimal;
 
-public class MontchSalary {
+public class MonnthSalary {
     private String month;
     private BigDecimal Salary;
     private int counter;
 
-    public MontchSalary(String month, BigDecimal salary) {
+    public MonnthSalary(String month, BigDecimal salary) {
         this.month = month;
         Salary = salary;
-        counter = 0;
+        counter = 1;
     }
 
     public String getMonth() {
@@ -34,7 +34,7 @@ public class MontchSalary {
         return counter;
     }
 
-    public BigDecimal getMedium(){
+    public BigDecimal getMedium() {
         return Salary.divide(new BigDecimal(counter));
     }
 
