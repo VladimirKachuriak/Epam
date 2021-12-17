@@ -16,14 +16,17 @@ public class Menu {
             System.out.println("2 - Delete city by id");
             System.out.println("3 - show cities");
             System.out.println("4 - show cities by ID");
-            System.out.println("5 - Add country");
-            System.out.println("6 - Delete country by id");
-            System.out.println("7 - show all countries");
-            System.out.println("8 - find country by ID");
+            System.out.println("5 - show cities with correspond population");
+            System.out.println("6 - show cities with correspond name");
+            System.out.println("7 - Add country");
+            System.out.println("8 - Delete country by id");
+            System.out.println("9 - show all countries");
+            System.out.println("10 - find country by ID");
+            System.out.println("11 - show all cities of the country by id");
             switch (getNumber("Please, enter number of comamand")) {
                 case 1: {
                    showResult(cityService.addCity(getNumber(CityMenuMessage.ENTER_ID),getNumber(CountryMenuMessage.ENTER_ID),
-                           getString(CityMenuMessage.ENTER_NAME),getNumber(CityMenuMessage.ENTER_POPULATION),getString("Enter name of the capital") ));
+                           getString(CityMenuMessage.ENTER_NAME),getNumber(CityMenuMessage.ENTER_POPULATION),countryService));
                 }
                 break;
                 case 2: {
@@ -39,19 +42,31 @@ public class Menu {
                 }
                 break;
                 case 5: {
-                        showResult(countryService.addCountry(getNumber(CountryMenuMessage.ENTER_ID),getString(CountryMenuMessage.ENTER_NAME)));
+                    showResult(cityService.findAllCityByName(getString(CityMenuMessage.ENTER_NAME)));
                 }
                 break;
                 case 6: {
-                    showResult(countryService.deleteCountryByID(getNumber(CountryMenuMessage.ENTER_ID_FOR_DELETE)));
+                    showResult(cityService.findAllCityByPopulation(getNumber(CityMenuMessage.ENTER_POPULATION)));
                 }
                 break;
                 case 7: {
-                    showResult(countryService.showAllCountry());
+                        showResult(countryService.addCountry(getNumber(CountryMenuMessage.ENTER_ID),getString(CountryMenuMessage.ENTER_NAME)));
                 }
                 break;
                 case 8: {
+                    showResult(countryService.deleteCountryByID(getNumber(CountryMenuMessage.ENTER_ID_FOR_DELETE),cityService));
+                }
+                break;
+                case 9: {
+                    showResult(countryService.showAllCountry());
+                }
+                break;
+                case 10: {
                      showResult(countryService.findCountryById(getNumber(CountryMenuMessage.ENTER_ID_FOR_FIND)));
+                }
+                break;
+                case 11: {
+                    showResult(cityService.findCitiesByCountryId(getNumber(CountryMenuMessage.ENTER_ID_FOR_FIND)));
                 }
                 break;
             }

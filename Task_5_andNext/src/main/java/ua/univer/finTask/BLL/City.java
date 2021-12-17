@@ -7,15 +7,15 @@ public class City implements Serializable {
     private Country country;
     private String name;
     private int population;
-    private String capital;
+    private boolean capital;
 
     public City(){}
-    public City(int id, Country country, String name, int population, String capital) {
+    public City(int id, Country country, String name, int population) {
         this.id = id;
         this.country = country;
         this.name = name;
         this.population = population;
-        this.capital = capital;
+        this.capital=false;
     }
 
     public int getId() {
@@ -50,17 +50,17 @@ public class City implements Serializable {
         this.population = population;
     }
 
-    public String getCapital() {
+    public boolean getCapital() {
         return capital;
     }
 
-    public void setCapital(String capital) {
-        this.capital = capital;
+    public void setCapital(boolean iscapital) {
+        this.capital = iscapital;
     }
 
     @Override
     public String toString() {
-        return "City{" +
+        return "\nCity{" +
                 "id=" + id +
                 ", country=" + country +
                 ", name='" + name + '\'' +
