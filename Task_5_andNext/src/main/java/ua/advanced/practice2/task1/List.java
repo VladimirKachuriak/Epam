@@ -1,4 +1,4 @@
-package ua.advanced.practice2.task2;
+package ua.advanced.practice2.task1;
 
 import ua.advanced.practice1.task2.Container;
 
