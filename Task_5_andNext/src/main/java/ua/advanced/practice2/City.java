@@ -28,14 +28,17 @@ public class City {
 
         // Получаем корневой элемент
         Element root = doc.getDocumentElement();
-        if (root.getTagName().equals("exchange")){
-            NodeList listCurrency = root.getElementsByTagName("currency");
+        if (root.getTagName().equals("cities")){
+            NodeList listCurrency = root.getElementsByTagName("city");
             for (int i=0; i<listCurrency.getLength(); i++){
-                String cc = ((Element)listCurrency.item(i)).getElementsByTagName("cc").item(0).getTextContent();
-                String txt = ((Element)listCurrency.item(i)).getElementsByTagName("txt").item(0).getTextContent();
-                String rate =  ((Element)listCurrency.item(i)).getElementsByTagName("rate").item(0).getTextContent();
+                System.out.printf(String.valueOf(listCurrency.getLength()));
+                String cc = ((Element)listCurrency.item(i)).getElementsByTagName("cityname").item(0).getTextContent();
+                String txt = ((Element)listCurrency.item(i)).getElementsByTagName("country").item(0).getTextContent();
+                String rate =  ((Element)listCurrency.item(i)).getElementsByTagName("population").item(0).getTextContent();
                 System.out.println(cc + ", "+txt+" = "+rate);
             }
+        }else{
+            System.out.printf("adfs");
         }
 
     }
