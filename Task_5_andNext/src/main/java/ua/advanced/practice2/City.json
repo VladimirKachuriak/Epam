@@ -1,0 +1,37 @@
+{
+  "head": {
+    "value": {
+      "city": "Amsterdam",
+      "Country": "Nederland",
+      "population": 1234000
+    },
+    "next": {
+      "value": {
+        "city": "Vena",
+        "Country": "Austria",
+        "population": 300000
+      },
+      "next": {
+        "value": {
+          "city": "Paris",
+          "Country": "France",
+          "population": 3000000
+        },
+        "next": {
+          "value": {
+            "city": "Lviv",
+            "Country": "Ukraine",
+            "population": 1000000
+          },
+          "next": {
+            "value": {
+              "city": "Kyiv",
+              "Country": "Ukraine",
+              "population": 2500000
+            }
+          }
+        }
+      }
+    }
+  }
+}
