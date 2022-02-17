@@ -1,13 +1,10 @@
 package ua.advanced.practice2.task2;
 
-import ua.advanced.practice2.task1.ListImpl;
-
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+
 
 public class QueueImpl implements Queue {
-    Node head;
+    private Node head;
 
     public static void main(String[] args) {
         QueueImpl queue = new QueueImpl();
@@ -16,6 +13,10 @@ public class QueueImpl implements Queue {
         queue.enqueue("C");
         System.out.println(queue.dequeue());
         System.out.println(queue);
+        Iterator<Object> iter = queue.iterator();
+        while (iter.hasNext()) {
+            System.out.printf(iter.next().toString());
+        }
     }
 
     @Override
@@ -37,7 +38,7 @@ public class QueueImpl implements Queue {
 
     @Override
     public Iterator<Object> iterator() {
-        return null;
+        return new IteratorImpl();
     }
 
     @Override
@@ -67,11 +68,7 @@ public class QueueImpl implements Queue {
     @Override
     public Object top() {
         if(head == null)return null;
-        Node node = head;
-        while (node.next != null) {
-            node = node.next;
-        }
-        return node.value;
+        return head.value;
     }
 
     @Override
@@ -84,7 +81,7 @@ public class QueueImpl implements Queue {
             if(node !=null) {
                 result.append(", ");
                 if (node.next == null) {
-                    result.append(node.value + "]");
+                    result.append(node.value).append("]");
                     return result.toString();
                 }
             }else {
@@ -102,14 +99,14 @@ public class QueueImpl implements Queue {
 
         @Override
         public boolean hasNext() {
-            return node.next != null;
+            return node != null;
         }
 
         @Override
         public Object next() {
             prev = node;
             node = node.next;
-            return node.value;
+            return prev.value;
         }
 
         @Override

@@ -1,20 +1,23 @@
 package ua.advanced.practice2.task3;
 
-import ua.advanced.practice2.task1.ListImpl;
-import ua.advanced.practice2.task2.QueueImpl;
-
 import java.util.Iterator;
 
 public class StackImpl implements Stack {
-    Node head;
+    private Node head;
 
     public static void main(String[] args) {
         StackImpl stack = new StackImpl();
         stack.push("A");
         stack.push("B");
         stack.push("C");
+        stack.pop();
         System.out.println(stack);
+        Iterator<Object> iter = stack.iterator();
+        while (iter.hasNext()) {
+            System.out.printf(iter.next().toString());
+        }
     }
+
     @Override
     public void clear() {
         head = null;
@@ -44,37 +47,38 @@ public class StackImpl implements Stack {
 
     @Override
     public Object pop() {
-        if(head !=null ){
+        if (head != null) {
             Node temp = head;
             head = head.next;
-            return head;
-        }else {
+            return temp.value;
+        } else {
             return null;
         }
     }
 
     @Override
     public Object top() {
-        if(head !=null ){
+        if (head != null) {
             return head.value;
-        }else {
+        } else {
             return null;
         }
     }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("[");
         Node node = head;
-        while (node != null){
+        while (node != null) {
             result.append(node.value.toString());
             node = node.next;
-            if(node !=null) {
+            if (node != null) {
                 result.append(", ");
                 if (node.next == null) {
                     result.append(node.value + "]");
                     return result.toString();
                 }
-            }else {
+            } else {
                 result.append("]");
                 return result.toString();
             }
@@ -89,14 +93,14 @@ public class StackImpl implements Stack {
 
         @Override
         public boolean hasNext() {
-            return node.next != null;
+            return node != null;
         }
 
         @Override
         public Object next() {
             prev = node;
             node = node.next;
-            return node.value;
+            return prev.value;
         }
 
         @Override

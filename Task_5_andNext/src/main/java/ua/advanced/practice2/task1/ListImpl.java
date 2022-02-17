@@ -9,8 +9,8 @@ public class ListImpl implements List {
         ListImpl list = new ListImpl();
         list.addFirst("A");
         list.addFirst("B");
-        //list.addFirst("C");
-        System.out.println(list.remove(""));
+        list.addFirst("C");
+        System.out.println(list.remove("C"));
         System.out.println(list);
         System.out.println("///////////////////");
         for (Object obj: list) {
@@ -108,8 +108,7 @@ public class ListImpl implements List {
     public Object search(Object element) {
         if(head == null)return null;
         Node node = head;
-        if(element.equals(node.value))return node.value;
-        while (node.next != null) {
+        while (node != null) {
             if(element.equals(node.value))return node.value;
             node = node.next;
         }
@@ -163,15 +162,14 @@ public class ListImpl implements List {
         private Node prev;
         @Override
         public boolean hasNext() {
-            if(node == null)return false;
-            return node.next != null;
+            return node != null;
         }
 
         @Override
         public Object next() {
             prev = node;
             node = node.next;
-            return node.value;
+            return prev.value;
         }
 
         @Override

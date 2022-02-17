@@ -3,7 +3,26 @@
     <city>
         <cityname>Kyiv</cityname>
         <country>Ukraine</country>
-        <population>25000000</population>
+        <population>2500000</population>
     </city>
-
+    <city>
+        <cityname>Lviv</cityname>
+        <country>Ukraine</country>
+        <population>1000000</population>
+    </city>
+    <city>
+        <cityname>Paris</cityname>
+        <country>France</country>
+        <population>3000000</population>
+    </city>
+    <city>
+        <cityname>Vena</cityname>
+        <country>Austria</country>
+        <population>300000</population>
+    </city>
+    <city>
+        <cityname>Amsterdam</cityname>
+        <country>Nederland</country>
+        <population>1234000</population>
+    </city>
 </cities>
