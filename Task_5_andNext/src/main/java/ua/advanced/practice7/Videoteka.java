@@ -87,7 +87,6 @@ public class Videoteka {
     public void deleteFilmWithOlderThenNYear(int years) {
         try (Connection connection = DBConnection.getInstance().getConnection()) {
             Date currentDate = new Date(System.currentTimeMillis()- (long) years *1000*60*60*24*365-1000*60*60*24);
-            connection.setAutoCommit(false);
             PreparedStatement ps1 = connection.prepareStatement(DELETE_FILM_FROM_TRANSIT);
             ps1.setDate(1,currentDate);
             PreparedStatement ps2 = connection.prepareStatement(DELETE_FILM_FROM_FILMS);
